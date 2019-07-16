@@ -19,11 +19,12 @@
 package com.github.client.api;
 
 import com.github.client.api.model.common.ResultList;
-import com.github.client.api.model.runtime.request.CreateProcessInstanceRepresentation;
-import com.github.client.api.model.runtime.response.ProcessInstanceRepresentation;
+import com.github.client.api.model.runtime.response.TaskRepresentation;
 import retrofit2.Call;
-import retrofit2.http.Body;
-import retrofit2.http.POST;
+import retrofit2.http.GET;
+import retrofit2.http.QueryMap;
+
+import java.util.Map;
 
 /**
  *
@@ -32,6 +33,6 @@ import retrofit2.http.POST;
  **/
 public interface TaskAPI
 {
-    @POST("service/runtime/tasks")
-    Call<ResultList<ProcessInstanceRepresentation>> getTasks(@Body CreateProcessInstanceRepresentation createProcessInstanceRepresentation);
+    @GET("service/runtime/tasks?")
+    Call<ResultList<TaskRepresentation>> getTasks(@QueryMap Map<String,String> params);
 }
