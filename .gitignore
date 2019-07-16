@@ -27,4 +27,3 @@ pom.xml.*
 /local.properties
 .DS_Store
 /build
-/pom.xml
