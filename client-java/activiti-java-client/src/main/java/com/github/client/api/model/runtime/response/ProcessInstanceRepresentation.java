@@ -26,8 +26,10 @@ import com.github.client.api.model.common.AbstractRepresentation;
 import com.github.client.api.model.runtime.RestVariable;
 
 /**
- * Created by jpascal on 12/12/2014.
- */
+ * 
+ * @author joezou
+ * @date 2019/7/16 16:56
+ **/
 public class ProcessInstanceRepresentation extends AbstractRepresentation
 {
     protected String id;

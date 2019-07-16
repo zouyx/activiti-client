@@ -18,21 +18,20 @@
 
 package com.github.client.api;
 
-import com.github.client.api.model.runtime.response.ProcessDefinitionRepresentation;
-import retrofit2.Call;
-import retrofit2.http.GET;
-
 import com.github.client.api.model.common.ResultList;
+import com.github.client.api.model.runtime.request.CreateProcessInstanceRepresentation;
+import com.github.client.api.model.runtime.response.ProcessInstanceRepresentation;
+import retrofit2.Call;
+import retrofit2.http.Body;
+import retrofit2.http.POST;
 
 /**
  *
  * @author joezou
  * @date 2019/7/16 16:55
  **/
-public interface ProcessDefinitionAPI
+public interface TaskAPI
 {
-
-    @GET("service/repository/process-definitions")
-    Call<ResultList<ProcessDefinitionRepresentation>> getRepositoryProcessDefinitions();
-
+    @POST("service/runtime/tasks")
+    Call<ResultList<ProcessInstanceRepresentation>> getTasks(@Body CreateProcessInstanceRepresentation createProcessInstanceRepresentation);
 }

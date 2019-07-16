@@ -21,46 +21,27 @@ package com.github.client.api.model.runtime.request;
 import java.util.Map;
 
 import com.github.client.api.model.editor.form.request.CompleteFormRepresentation;
+import lombok.Data;
 
+@Data
 public class CreateProcessInstanceRepresentation extends CompleteFormRepresentation
 {
     private String processDefinitionId;
 
-    private String name;
+    private String businessKey;
 
-    public CreateProcessInstanceRepresentation(String processDefinitionId, String name)
+    public CreateProcessInstanceRepresentation(String processDefinitionId, String businessKey)
     {
         super(null, null);
         this.processDefinitionId = processDefinitionId;
-        this.name = name;
+        this.businessKey = businessKey;
     }
 
-    public CreateProcessInstanceRepresentation(String processDefinitionId, String name, Map<String, Object> values,
+    public CreateProcessInstanceRepresentation(String processDefinitionId, String businessKey, Map<String, Object> values,
             String outcome)
     {
         super(values, outcome);
         this.processDefinitionId = processDefinitionId;
-        this.name = name;
+        this.businessKey = businessKey;
     }
-
-    public void setName(String name)
-    {
-        this.name = name;
-    }
-
-    public String getName()
-    {
-        return name;
-    }
-
-    public void setProcessDefinitionId(String processDefinitionId)
-    {
-        this.processDefinitionId = processDefinitionId;
-    }
-
-    public String getProcessDefinitionId()
-    {
-        return processDefinitionId;
-    }
-
 }

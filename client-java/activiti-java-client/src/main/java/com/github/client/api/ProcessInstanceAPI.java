@@ -18,10 +18,24 @@
 
 package com.github.client.api;
 
+import com.github.client.api.model.common.ResultList;
+import com.github.client.api.model.runtime.request.CreateProcessInstanceRepresentation;
+import com.github.client.api.model.runtime.response.ProcessDefinitionRepresentation;
+import com.github.client.api.model.runtime.response.ProcessInstanceRepresentation;
+import retrofit2.Call;
+import retrofit2.http.Body;
+import retrofit2.http.GET;
+import retrofit2.http.POST;
+
+import javax.annotation.PostConstruct;
+
 /**
- * Created by jpascal on 11/12/2014.
- */
+ *
+ * @author joezou
+ * @date 2019/7/16 16:55
+ **/
 public interface ProcessInstanceAPI
 {
-
+    @POST("service/runtime/process-instances")
+    Call<ResultList<ProcessInstanceRepresentation>> createProcessInstances(@Body CreateProcessInstanceRepresentation createProcessInstanceRepresentation);
 }
