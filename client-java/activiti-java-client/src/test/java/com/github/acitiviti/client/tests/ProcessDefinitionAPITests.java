@@ -19,6 +19,8 @@
 package com.github.acitiviti.client.tests;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.github.acitiviti.client.ProcessDefinitionAPI;
 import com.github.acitiviti.client.model.common.ResultList;
@@ -42,8 +44,12 @@ public class ProcessDefinitionAPITests extends ActivitiAPITestCase
     {
         ProcessDefinitionAPI processDefAPI = client.getAPI(ProcessDefinitionAPI.class);
 
+        Map<String,String> params=new HashMap<>();
+        params.put("name","joe-flow");
+        params.put("order","desc");
+        params.put("sort","id");
         // Check if the user is present
-        Response<ResultList<ProcessDefinitionRepresentation>> execute = processDefAPI.getRepositoryProcessDefinitions()
+        Response<ResultList<ProcessDefinitionRepresentation>> execute = processDefAPI.getRepositoryProcessDefinitions(params)
                 .execute();
         System.out.println(execute.body());
 

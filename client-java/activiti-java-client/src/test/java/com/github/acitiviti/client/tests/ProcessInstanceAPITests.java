@@ -42,7 +42,7 @@ public class ProcessInstanceAPITests extends ActivitiAPITestCase
     {
         ProcessInstanceAPI processDefAPI = client.getAPI(ProcessInstanceAPI.class);
 
-        CreateProcessInstanceRepresentation instance=new CreateProcessInstanceRepresentation("dev:6:7554","");
+        CreateProcessInstanceRepresentation instance=new CreateProcessInstanceRepresentation("dev:7:7562","123");
 
         // Check if the user is present
         Response<ProcessInstanceRepresentation> execute = processDefAPI.createProcessInstances(instance).execute();

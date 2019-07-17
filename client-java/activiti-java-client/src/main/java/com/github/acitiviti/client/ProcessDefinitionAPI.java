@@ -23,6 +23,9 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 import com.github.acitiviti.client.model.common.ResultList;
+import retrofit2.http.QueryMap;
+
+import java.util.Map;
 
 /**
  *
@@ -33,6 +36,6 @@ public interface ProcessDefinitionAPI
 {
 
     @GET("service/repository/process-definitions")
-    Call<ResultList<ProcessDefinitionRepresentation>> getRepositoryProcessDefinitions();
+    Call<ResultList<ProcessDefinitionRepresentation>> getRepositoryProcessDefinitions(@QueryMap Map<String,String> params);
 
 }

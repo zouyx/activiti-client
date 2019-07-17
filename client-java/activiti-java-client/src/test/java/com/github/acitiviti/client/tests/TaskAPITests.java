@@ -49,7 +49,7 @@ public class TaskAPITests extends ActivitiAPITestCase
         TaskAPI taskAPI = client.getAPI(TaskAPI.class);
 
         Map<String,String> params=new HashMap<>();
-        params.put("aaa","1111");
+        params.put("assignee","zouyixian");
         // Check if the user is present
         Response<ResultList<TaskRepresentation>> execute = taskAPI.getTasks(params).execute();
         System.out.println(execute.body());
