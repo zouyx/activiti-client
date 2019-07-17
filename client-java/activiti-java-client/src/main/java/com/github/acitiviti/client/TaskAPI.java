@@ -19,10 +19,11 @@
 package com.github.acitiviti.client;
 
 import com.github.acitiviti.client.model.common.ResultList;
+import com.github.acitiviti.client.model.runtime.request.TaskAction;
 import com.github.acitiviti.client.model.runtime.response.TaskRepresentation;
 import retrofit2.Call;
-import retrofit2.http.GET;
-import retrofit2.http.QueryMap;
+import retrofit2.http.*;
+import rx.Observable;
 
 import java.util.Map;
 
@@ -35,4 +36,8 @@ public interface TaskAPI
 {
     @GET("service/runtime/tasks?")
     Call<ResultList<TaskRepresentation>> getTasks(@QueryMap Map<String,String> params);
+
+    @Headers({ "Content-type: application/json" })
+    @POST("service/runtime/tasks/{taskId}")
+    Call<Void> updateTaskAction(@Path("taskId") String taskId,@Body TaskAction taskAction);
 }

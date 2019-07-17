@@ -16,22 +16,14 @@
  *  limitations under the License.
  */
 
-package com.github.acitiviti.client;
+package com.github.acitiviti.client.model.runtime.request;
 
-import com.github.acitiviti.client.model.common.ResultList;
-import com.github.acitiviti.client.model.runtime.request.CreateProcessInstanceRepresentation;
-import com.github.acitiviti.client.model.runtime.response.ProcessInstanceRepresentation;
-import retrofit2.Call;
-import retrofit2.http.Body;
-import retrofit2.http.POST;
+import lombok.Data;
 
-/**
- *
- * @author joezou
- * @date 2019/7/16 16:55
- **/
-public interface ProcessInstanceAPI
+@Data
+public class TaskAction
 {
-    @POST("service/runtime/process-instances")
-    Call<ProcessInstanceRepresentation> createProcessInstances(@Body CreateProcessInstanceRepresentation createProcessInstanceRepresentation);
+    private String action;
+
+    private String assignee;
 }

@@ -45,7 +45,7 @@ public class ProcessInstanceAPITests extends ActivitiAPITestCase
         CreateProcessInstanceRepresentation instance=new CreateProcessInstanceRepresentation("dev:6:7554","");
 
         // Check if the user is present
-        Response<ResultList<ProcessInstanceRepresentation>> execute = processDefAPI.createProcessInstances(instance).execute();
+        Response<ProcessInstanceRepresentation> execute = processDefAPI.createProcessInstances(instance).execute();
         System.out.println(execute.body());
 
     }

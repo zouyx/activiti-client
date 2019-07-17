@@ -18,9 +18,14 @@
 
 package com.github.acitiviti.client.tests;
 
+import com.github.acitiviti.client.BPMClient;
+import com.github.acitiviti.client.ProcessInstanceAPI;
 import com.github.acitiviti.client.TaskAPI;
 import com.github.acitiviti.client.ActivitiAPITestCase;
 import com.github.acitiviti.client.model.common.ResultList;
+import com.github.acitiviti.client.model.runtime.request.CreateProcessInstanceRepresentation;
+import com.github.acitiviti.client.model.runtime.request.TaskAction;
+import com.github.acitiviti.client.model.runtime.response.ProcessInstanceRepresentation;
 import com.github.acitiviti.client.model.runtime.response.TaskRepresentation;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -39,7 +44,7 @@ public class TaskAPITests extends ActivitiAPITestCase
     }
 
     @Test
-    public void createProcessInstances() throws IOException
+    public void getTasks() throws IOException
     {
         TaskAPI taskAPI = client.getAPI(TaskAPI.class);
 
@@ -50,4 +55,20 @@ public class TaskAPITests extends ActivitiAPITestCase
         System.out.println(execute.body());
 
     }
+
+    @Test
+    public void taskAction() throws IOException
+    {
+        BPMClient bpmClient = prepareClient(TEST_ENDPOINT, "joe", "joe");
+
+        TaskAPI taskAPI = bpmClient.getAPI(TaskAPI.class);
+
+        TaskAction taskAction=new TaskAction();
+        taskAction.setAction("complete");
+        // Check if the user is present
+        Response<Void> execute = taskAPI.updateTaskAction("10114", taskAction).execute();
+        System.out.println(execute.body());
+
+    }
+
 }

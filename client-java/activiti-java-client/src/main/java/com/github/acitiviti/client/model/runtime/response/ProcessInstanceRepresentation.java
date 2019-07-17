@@ -24,212 +24,43 @@ import java.util.List;
 
 import com.github.acitiviti.client.model.common.AbstractRepresentation;
 import com.github.acitiviti.client.model.runtime.RestVariable;
+import lombok.Data;
 
 /**
  * 
  * @author joezou
  * @date 2019/7/16 16:56
  **/
+@Data
 public class ProcessInstanceRepresentation extends AbstractRepresentation
 {
     protected String id;
 
-    protected String name;
+    protected String url;
 
     protected String businessKey;
+
+    protected boolean suspended;
+
+    protected boolean ended;
 
     protected String processDefinitionId;
 
     protected String tenantId;
 
-    protected Date started;
-
-    protected Date ended;
-
-    protected String processDefinitionName;
-
-    protected String processDefinitionDescription;
+    protected String processDefinitionUrl;
 
     protected String processDefinitionKey;
 
-    protected String processDefinitionCategory;
+    protected String activityId;
 
-    protected int processDefinitionVersion;
+    protected String name;
 
-    protected String processDefinitionDeploymentId;
-
-    protected boolean graphicalNotationDefined;
-
-    protected boolean startFormDefined;
+    protected boolean completed;
 
     protected List<RestVariable> variables = new ArrayList<RestVariable>();
 
     public ProcessInstanceRepresentation()
     {
-    }
-
-    public String getId()
-    {
-        return id;
-    }
-
-    public void setId(String id)
-    {
-        this.id = id;
-    }
-
-    public String getName()
-    {
-        return name;
-    }
-
-    public void setName(String name)
-    {
-        this.name = name;
-    }
-
-    public String getBusinessKey()
-    {
-        return businessKey;
-    }
-
-    public void setBusinessKey(String businessKey)
-    {
-        this.businessKey = businessKey;
-    }
-
-    public String getProcessDefinitionId()
-    {
-        return processDefinitionId;
-    }
-
-    public void setProcessDefinitionId(String processDefinitionId)
-    {
-        this.processDefinitionId = processDefinitionId;
-    }
-
-    public String getTenantId()
-    {
-        return tenantId;
-    }
-
-    public void setTenantId(String tenantId)
-    {
-        this.tenantId = tenantId;
-    }
-
-    public Date getStarted()
-    {
-        return started;
-    }
-
-    public void setStarted(Date started)
-    {
-        this.started = started;
-    }
-
-    public Date getEnded()
-    {
-        return ended;
-    }
-
-    public void setEnded(Date ended)
-    {
-        this.ended = ended;
-    }
-
-    public String getProcessDefinitionName()
-    {
-        return processDefinitionName;
-    }
-
-    public void setProcessDefinitionName(String processDefinitionName)
-    {
-        this.processDefinitionName = processDefinitionName;
-    }
-
-    public String getProcessDefinitionDescription()
-    {
-        return processDefinitionDescription;
-    }
-
-    public void setProcessDefinitionDescription(String processDefinitionDescription)
-    {
-        this.processDefinitionDescription = processDefinitionDescription;
-    }
-
-    public String getProcessDefinitionKey()
-    {
-        return processDefinitionKey;
-    }
-
-    public void setProcessDefinitionKey(String processDefinitionKey)
-    {
-        this.processDefinitionKey = processDefinitionKey;
-    }
-
-    public String getProcessDefinitionCategory()
-    {
-        return processDefinitionCategory;
-    }
-
-    public void setProcessDefinitionCategory(String processDefinitionCategory)
-    {
-        this.processDefinitionCategory = processDefinitionCategory;
-    }
-
-    public int getProcessDefinitionVersion()
-    {
-        return processDefinitionVersion;
-    }
-
-    public void setProcessDefinitionVersion(int processDefinitionVersion)
-    {
-        this.processDefinitionVersion = processDefinitionVersion;
-    }
-
-    public String getProcessDefinitionDeploymentId()
-    {
-        return processDefinitionDeploymentId;
-    }
-
-    public void setProcessDefinitionDeploymentId(String processDefinitionDeploymentId)
-    {
-        this.processDefinitionDeploymentId = processDefinitionDeploymentId;
-    }
-
-    public List<RestVariable> getVariables()
-    {
-        return variables;
-    }
-
-    public void setVariables(List<RestVariable> variables)
-    {
-        this.variables = variables;
-    }
-
-    public void addVariable(RestVariable variable)
-    {
-        variables.add(variable);
-    }
-
-    public boolean isGraphicalNotationDefined()
-    {
-        return graphicalNotationDefined;
-    }
-
-    public void setGraphicalNotationDefined(boolean graphicalNotationDefined)
-    {
-        this.graphicalNotationDefined = graphicalNotationDefined;
-    }
-
-    public boolean isStartFormDefined()
-    {
-        return startFormDefined;
-    }
-
-    public void setStartFormDefined(boolean startFormDefined)
-    {
-        this.startFormDefined = startFormDefined;
     }
 }
