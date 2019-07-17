@@ -20,18 +20,18 @@
     xmlns="http://maven.apache.org/POM/4.0.0"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.github.zouyx</groupId>
+    <groupId>com.github.activiti</groupId>
     <artifactId>activiti-client</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOTS</version>
     <packaging>pom</packaging>
 
     <name>Alfresco Activiti Client (Parent)</name>
     <description>Alfresco Activiti Client generic POM file for Maven builds</description>
-    <url>http://www.alfresco.org/</url>
-    <inceptionYear>2005</inceptionYear>
+    <url>http://github.com</url>
+    <inceptionYear>2019</inceptionYear>
     <organization>
-        <name>Alfresco Software</name>
-        <url>http://www.alfresco.org/</url>
+        <name>github</name>
+        <url>http://github.com</url>
     </organization>
 
     <licenses>
@@ -52,6 +52,7 @@
             </roles>
         </developer>
     </developers>
+
     <properties>
         <!-- Maven build properties -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -92,13 +93,13 @@
         <dependencies>
             <!-- ALFRESCO & ACTIVITI PROJECTS -->
             <dependency>
-                <groupId>org.alfresco.client</groupId>
+                <groupId>com.github.activiti</groupId>
                 <artifactId>client-commons</artifactId>
                 <version>${alfresco.commons.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.alfresco.client</groupId>
-                <artifactId>activiti-java-client</artifactId>
+                <groupId>com.github.activiti</groupId>
+                <artifactId>activiti-client</artifactId>
                 <version>${project.version}</version>
             </dependency>
 

@@ -21,9 +21,9 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.alfresco.client</groupId>
+        <groupId>com.github.activiti</groupId>
         <artifactId>activiti-client</artifactId>
-        <version>1.4.0-SNAPSHOTS</version>
+        <version>1.0.0-SNAPSHOTS</version>
         <relativePath>../../</relativePath>
     </parent>
     <artifactId>client-commons</artifactId>
